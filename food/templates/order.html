@@ -1,0 +1,33 @@
+{% extends 'navbar.html' %}
+
+{% block content %}
+
+<link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.2.1/css/bootstrap.min.css" integrity="sha384-GJzZqFGwb1QTTN6wy59ffF1BuGJpLSa9DkKMp0DgiMDm4iYMj70gZWKYbI706tWS" crossorigin="anonymous">
+
+      <form class="container bg-light border mt-5  w-50 p-2" action="" method="post">
+       {% csrf_token %}
+          <h4 style="text-align: center;" >Order an item</h4>
+          <div class="form-group">
+            <label for="first_name">Customer name :</label>
+            <input type="text" class="form-control" id="first_name" aria-describedby="emailHelp" placeholder="Enter name" name="name">
+            
+          <div class="form-group">
+            <label for="name">Table number:</label>
+            <input type="number" class="form-control" id="name" aria-describedby="emailHelp" placeholder="Table number" name="number">
+            
+          <div class="form-group">
+            <label for="exampleInputPassword1">Item name:</label>
+            <input type="text" class="form-control" id="exampleInputPassword1" placeholder="item name" name="item_name">
+          </div>
+          <div class="form-group">
+            <label for="exampleInputPassword2">Item quantity</label>
+            <input type="number" class="form-control" id="exampleInputPassword2" placeholder="Quantity of item" name="item_quantity">
+          </div>
+          <button type="submit" class="btn btn-primary p-10">Order</button>
+        </form>
+
+        <script src="https://code.jquery.com/jquery-3.3.1.slim.min.js" integrity="sha384-q8i/X+965DzO0rT7abK41JStQIAqVgRVzpbzo5smXKp4YfRvH+8abtTE1Pi6jizo" crossorigin="anonymous"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.14.6/umd/popper.min.js" integrity="sha384-wHAiFfRlMFy6i5SRaxvfOCifBUQy1xHdJ/yoi7FRNXMRBu5WHdZYu1hA6ZOblgut" crossorigin="anonymous"></script>
+    <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.2.1/js/bootstrap.min.js" integrity="sha384-B0UglyR+jN6CkvvICOB2joaf5I4l3gm9GU6Hc1og6Ls7i6U/mkkaduKaBhlAXv9k" crossorigin="anonymous"></script>
+
+{% endblock %}
