@@ -8,7 +8,7 @@ Template is written with django 5.0.4 and python 3.12 in mind.
 
 Default Home Page after logging into the website !
 
-![Screenshot (3)](https://github.com/harihumsi/seproject/assets/127105921/bcb97441-6c91-4224-a61d-76ad8a224c8f)
+![image](https://github.com/harihumsi/seproject/assets/127105921/57c54a5f-2835-4cc5-9703-b21812b28920)
 
 
 ### Main features
