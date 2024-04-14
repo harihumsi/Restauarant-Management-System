@@ -6,6 +6,11 @@ The goal of this project is to provide to introduce online food booking of a res
 
 Template is written with django 5.0.4 and python 3.12 in mind.
 
+Default Home Page after logging into the website !
+
+![image](https://github.com/harihumsi/seproject/assets/127105921/57c54a5f-2835-4cc5-9703-b21812b28920)
+
+
 ### Main features
 
 * Separated dev and production settings
