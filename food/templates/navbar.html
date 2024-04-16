@@ -45,6 +45,7 @@ body{
 }
 
 .navbara ul li a{
+    text-transform: uppercase;
     text-decoration: none;
     color: #fff;
     padding: 4px;
@@ -132,10 +133,11 @@ body{
               <li><a href="/menu">MENU</a></li>
               <li><a href="/contact">CONTACT</a></li>
               <li><a href="/order">Order Here</a></li>
+              <li><a href="/review">Review</a></li>
                <li>
                 <form class="form" action="{% url 'logout' %}" method="post">
                   {% csrf_token %}
-                <input type="submit" class="reservation" value="Logout" name="submit">
+                <input type="submit" class="reservation" value="Log Out" name="submit">
               </form>
                </li>
             

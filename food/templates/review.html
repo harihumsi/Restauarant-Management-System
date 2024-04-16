@@ -1,0 +1,34 @@
+{% extends 'navbar.html' %}
+
+{% block content %}
+<style>
+    .container{
+      border-radius: 5px;
+    }
+  </style>
+  
+  
+  <div class="container my-2 bg-light w-25 p-3 text-bg-secondary">
+      
+  
+  <form action="" method="post" class="pl-3">
+    {% csrf_token %}
+    <h3>{{request.user.last_name}}'s Review</h3>
+    <div class="form-group">
+      <label for="name">Name</label>
+      <input type="text" class="form-control bg-transparent border-dark text-dark" id="name" name="username" aria-describedby="name">
+      <small id="emailHelp" class="form-text text-muted">Never shared to anyone.</small>
+    </div>
+  
+    <div class="form-group">
+      <label for="content">Your Review :</label>
+      <textarea class="form-control bg-transparent border-dark text-dark" name="content" id="content" cols="30" rows="5"></textarea>
+    </div>
+  
+  
+    <button type="submit" class="btn btn-primary">Submit</button>
+  </form>
+  
+  </div>
+
+{% endblock %}

@@ -5,7 +5,7 @@ from django.http import HttpResponse
 from django.views import generic
 from django.contrib.auth import authenticate, login, logout
 from django.views.generic import View
-from .models import Contact, Order, Food_Item
+from .models import Contact, Order, Food_Item, Review
 from django.contrib import messages
 from django.contrib.auth.models import User, auth
 
@@ -15,6 +15,21 @@ def index(request):
         return redirect("/login")
     else:
         return render(request, 'base.html')
+    
+def review(request):
+    if request.method == "POST":
+        name = request.POST["username"]
+        content = request.POST["content"]
+        #print( request.user.email, name, content)
+        if(len(name) == 0 or len(content) == 0):
+            messages.warning(request, "Please check your review form.")
+        
+        else:
+            data = Review(name = name, review= content)
+            data.save()
+            messages.success(request, "Review sent successfully !")
+            return redirect("/")
+    return render(request, "review.html")
     
 def read(request):
     return render(request, "read.html")
