@@ -1,0 +1,42 @@
+{% extends 'navbar.html' %}
+
+{% block content %}
+
+<style>
+    .container{
+      border-radius: 5px;
+    }
+  </style>
+  
+  
+  <div class="container my-2 bg-light w-25 p-3 text-bg-secondary">
+      
+  
+  <form action="bill/" method="post" class="pl-3">
+    {% csrf_token %}
+    <h3>For Pyament Receipt</h3>
+    <div class="form-group">
+      <label for="name">Enter Your table number: </label>
+      <input type="number" class="form-control bg-transparent border-dark text-dark" id="name" name="table" aria-describedby="name">
+    </div>
+  
+    <div class="form-group">
+      <label for="email">For discount: 
+        <ul>
+            <li>Type S if student.</li>
+            <li>Type V if a VIP customer.</li>
+            <li>Type R if a regular customer.</li>
+            <li>Otherwise type N/A</li>
+        </ul>
+      </label>
+      <input type="text" class="form-control bg-transparent border-dark text-dark" id="email" name="character" aria-describedby="emailHelp">
+      <small id="emailHelp" class="form-text text-muted">We'll never share your email with anyone else.</small>
+    </div>
+  
+  
+    <button type="submit" class="btn btn-primary" name="bill">Submit</button>
+  </form>
+  
+  </div>
+
+{% endblock %}

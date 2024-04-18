@@ -125,6 +125,9 @@ def menu(request):
         'all_items' : all_items
     }
     
+    for i in all_items:
+        print(i.name)
+    
     return render(request, "menu.html", context)
 
 def search(request):
@@ -139,5 +142,39 @@ def search(request):
     else:
         params={'allPosts': allPosts, 'query': query}    
         return render(request, 'search.html', params)
+    
+def payment(request):
+    return render(request, "payment.html")
+
+def bill(request):
+    if request.method == "POST":
+        query = request.POST["table"]
+        char = request.POST["character"]
+        dict = {}
+        sub_total = 0
+        total = 0
+        d = 0
+        t = 0
+        discount = {"S":0.15, "V":0.3 , "R" : 0.10}
+        all_posts1 = Order.objects.filter(number = int(query)).values()
+        for i in all_posts1:
+            
+            item = Food_Item.objects.filter(name = i["item_name"]).values()
+            for x in item:
+                sub_total += i["item_quantity"]*int(x["item_price"][3:])
+                dict[i["item_name"]] = {"name" : i["item_name"], "price":x["item_price"], "quantity" : i["item_quantity"], "sub_price": sub_total}
+                
+            total += sub_total
+            sub_total = 0
+        t =total
+        if char in discount:
+            total -= total*discount[char]
+            d = t*discount[char]
+        context={
+            "allposts" : dict,  "total": total , 'discount': d, "t" : t
+        }
+        return render(request, "bill.html", context)
+        
+    
 
 # Create your views here.

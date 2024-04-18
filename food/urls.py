@@ -13,5 +13,7 @@ urlpatterns = [
     path('logout/', views.logouts, name="logout"),
     path('search/', views.search, name="search"),
     path('read', views.read, name="read"),
-    path('review/', views.review, name="review")
+    path('review/', views.review, name="review"),
+    path('payment', views.payment, name="payment"),
+    path('bill/', views.bill, name="bill")
 ]
